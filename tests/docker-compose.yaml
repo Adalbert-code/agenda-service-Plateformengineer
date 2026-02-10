@@ -1,6 +1,6 @@
 services:
   redis:
-    image: docker.io/bitnami/redis:7.0.11-debian-11-r12
+    image: docker.io/bitnami/redis:7.0.15-debian-12-r15
     environment:
       - ALLOW_EMPTY_PASSWORD=yes
     ports:
