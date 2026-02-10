@@ -17,8 +17,8 @@ jobs:
     - name: Install portman
       run: npm install -g @apideck/portman && portman -l kodata/docs/openapi.yaml -o api/postman/agenda-service.postman.json
     - name: Build the stack
-      run: docker-compose -f tests/docker-compose.yaml up -d
+      run: docker compose -f tests/docker-compose.yaml up -d
     - name: Install newman and run tests
       run: npm install -g newman && newman run api/postman/agenda-service.postman.json --env-var "baseUrl=http://localhost:8080"
     - name: Shutdown the stack
-      run: docker-compose -f tests/docker-compose.yaml down
+      run: docker compose -f tests/docker-compose.yaml down
