@@ -1,0 +1,61 @@
+{
+  "version": 1.0,
+  "assignVariables": [
+    {
+      "openApiOperation": "POST::/agenda-items/",
+      "collectionVariables": [
+        {
+          "responseBodyProp": "id",
+          "name": "agendaItemId"
+        }
+      ]
+    }
+  ],
+  "overwrites": [
+    {
+      "openApiOperation": "POST::/agenda-items/",
+      "overwriteRequestBody": [
+        {
+          "key": "title",
+          "value": "Test Agenda Item",
+          "overwrite": true
+        },
+        {
+          "key": "author",
+          "value": "Test Author",
+          "overwrite": true
+        },
+        {
+          "key": "day",
+          "value": "Monday",
+          "overwrite": true
+        },
+        {
+          "key": "time",
+          "value": "09:00",
+          "overwrite": true
+        }
+      ]
+    },
+    {
+      "openApiOperation": "GET::/agenda-items/{id}",
+      "overwriteRequestPathVariables": [
+        {
+          "key": "id",
+          "value": "{{agendaItemId}}",
+          "overwrite": true
+        }
+      ]
+    },
+    {
+      "openApiOperation": "DELETE::/agenda-items/{id}",
+      "overwriteRequestPathVariables": [
+        {
+          "key": "id",
+          "value": "{{agendaItemId}}",
+          "overwrite": true
+        }
+      ]
+    }
+  ]
+}

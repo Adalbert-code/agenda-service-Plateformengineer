@@ -16,6 +16,12 @@ paths:
       operationId: createAgendaItem
       tags:
         - agenda-items
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AgendaItem'
       responses:
         '201':
           description: CREATED
